@@ -1,4 +1,4 @@
-# 🧪 E-Junkie Cucumber Automation Project – Techno Study Team
+# 🧪 E-Junkie Cucumber Automation Project 
 
 ## 📌 Table of Contents
 
@@ -47,7 +47,7 @@ E-JunkieDemoShopProject_Cucumber/
 │       │   ├── runners/                     # TestNG runner classes
 │       │   │   └── XML/                     # TestNG XML configuration files
 │       │   ├── stepDefinitions/             # Cucumber step definitions
-│       │   └── utilities/                   # Driver, ConfigReader, ReportManager, etc.
+│       │   └── utilities/                   # Driver, ConfigReader, ExtentReportManager, etc.
 │       └── resources/
 │           ├── fonts/                       # Fonts used in reports
 │           ├── extent.properties            # ExtentReports configuration
@@ -168,14 +168,13 @@ Currently, all tests are passing. No bugs reported.
 
 ## 👥 Project Team
 
-| Name               | Role                   | User Stories        |
-|--------------------|------------------------|---------------------|
-| Zafer Ataklı        | QA Engineer             | US_301, US_306, US_307 |
-| Rıfat Batır          | QA Engineer             | US_304, US_305        |
-| Azim Korkmaz        | QA Engineer             | US_303              |
-| Mert Can Özdemir    | QA Engineer             | US_302              |
-| Nuri Öztürk          | QA Engineer             | US_308              |
-| Yiğit Çam             | Project Lead             | US_301              |
+| Name               | Role                       | User Stories        |
+|--------------------|----------------------------|---------------------|
+| Zafer Ataklı        | Project Lead & QA Engineer | US_301, US_306, US_307 |
+| Rıfat Batır          | QA Engineer                | US_304, US_305        |
+| Azim Korkmaz        | QA Engineer                | US_303              |
+| Nuri Öztürk          | QA Engineer                | US_308              |
+| Yiğit Çam             | QA Engineer                | US_301              |
 
 ---
 
@@ -189,7 +188,7 @@ Currently, all tests are passing. No bugs reported.
 - [Rıfat Batır](https://github.com/rftbtr)
 - [Azim Korkmaz](https://github.com/AzimKorkmaz)
 - [Nuri Öztürk](https://github.com/NuriOzturk)
-- [Mert Can Özdemir](https://github.com/lioncarnes)
+
 
 ---
 
