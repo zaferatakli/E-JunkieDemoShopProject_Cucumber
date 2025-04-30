@@ -186,7 +186,7 @@ Currently, all tests are passing. No bugs reported.
 - [Zafer Ataklı](https://github.com/zaferatakli)
 - [Yiğit Çam](https://github.com/Yigit-Cam)
 - [Rıfat Batır](https://github.com/rftbtr)
-- [Azim Korkmaz](https://github.com/AzimKorkmaz)
+- [Tugba Kilic](https://github.com/TugbaKilic33)
 - [Nuri Öztürk](https://github.com/NuriOzturk)
 
 
