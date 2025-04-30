@@ -32,8 +32,9 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
+
     public static void waitForManualCaptchaSolution(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofMinutes(ConfigReader.getIntProperty("captchaWait")));
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("captchaWait")));
         wait.until(ExpectedConditions.visibilityOf(element));
         /// created to pass captcha verification manually.
     }
