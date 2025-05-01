@@ -1,9 +1,6 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
@@ -14,8 +11,8 @@ import utilities.ReusableMethods;
 public class ContactUsSteps {
     DialogContent dc = new DialogContent();
 
-    @Given("The user is on the homepage")
-    public void theUserIsOnTheHomepage() {
+    @Given("Navigate to E-Junkie homepage")
+    public void navigateToEJunkieHomepage() {
         GWD.getDriver().get(ConfigReader.getProperty("demoShopUrl"));
         String expectedUrl = ConfigReader.getProperty("demoShopUrl");
         String actualUrl = GWD.getDriver().getCurrentUrl();
