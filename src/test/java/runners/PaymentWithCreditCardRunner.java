@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 import utilities.ExtentReportManager;
 import utilities.GWD;
 
-@CucumberOptions(features = {"src/test/java/featureFiles/PaymentWithCreditCard.feature"}, glue = {"stepDefinitions"}, plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+@CucumberOptions(features = {"src/test/java/featureFiles/PaymentWithCreditCard.feature"}, glue = {"stepDefinitions", "hooks"}, plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class PaymentWithCreditCardRunner extends AbstractTestNGCucumberTests {
     @BeforeClass

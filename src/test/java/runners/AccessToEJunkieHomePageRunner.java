@@ -8,7 +8,7 @@ import utilities.GWD;
 
 @CucumberOptions(
         features = {"src/test/java/featureFiles/AccessToEJunkieHomePage.feature"},
-        glue = {"stepDefinitions"},
+        glue = {"stepDefinitions", "hooks"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class AccessToEJunkieHomePageRunner extends AbstractTestNGCucumberTests {
