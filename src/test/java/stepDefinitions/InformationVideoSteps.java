@@ -29,7 +29,6 @@ public class InformationVideoSteps {
     @And("The user clicks the play button")
     public void theUserClicksThePlayButton() throws InterruptedException {
         dc.myClick(dc.playButton);
-
         Thread.sleep(11000);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.closeButton));
         Assert.assertTrue(dc.closeButton.isDisplayed(), "Close button is not displayed");

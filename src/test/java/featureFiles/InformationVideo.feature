@@ -7,5 +7,3 @@ Feature: Information Video
     And The user clicks the see how is works button
     And The user clicks the play button
     Then The user clicks the close button
-
-

@@ -17,6 +17,7 @@ public class InformationVideoRunner extends AbstractTestNGCucumberTests {
     public void setUp(String browserType) {
         GWD.threadBrowserName.set(browserType);
         ExtentReportManager.setBrowserName(browserType);
+
     }
 
     @AfterClass
