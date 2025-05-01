@@ -50,15 +50,17 @@ public class GWD {
 
     public static void quitDriver() {
         if (threadDriver.get() != null) {
+            System.out.println("Quitting driver: " + threadDriver.get().toString());
             try {
-                /// Browser penceresi kapatılmadan önce 0.5 sn'lik kısa sabit bekleme (isteğe bağlı)
-                Thread.sleep(500); // çok daha makul
+                Thread.sleep(500);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // best practice
+                Thread.currentThread().interrupt();
             } finally {
                 threadDriver.get().quit();
                 threadDriver.remove();
             }
+        } else {
+            System.out.println("Driver is already null, no need to quit.");
         }
     }
 }

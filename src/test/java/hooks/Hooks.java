@@ -21,12 +21,11 @@ public class Hooks {
     public void after(Scenario scenario) {
         try {
             if (scenario.isFailed()) {
-                // Take screenshot
+
                 TakesScreenshot ts = (TakesScreenshot) GWD.getDriver();
                 byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
                 scenario.attach(screenshot, "image/png", scenario.getName());
 
-                // Add screenshot to Extent report (base64 = en stabil yol)
                 String base64Screenshot = ts.getScreenshotAs(OutputType.BASE64);
                 ExtentTest test = ExtentReportManager.getTest();
 
@@ -34,7 +33,7 @@ public class Hooks {
                     test.fail("Test failed. Screenshot below:",
                             MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
                 } else {
-                    System.out.println("⚠️ ExtentTest was null! Screenshot not attached to report.");
+                    System.out.println("ExtentTest was null! Screenshot not attached to report.");
                 }
             }
         } catch (Exception e) {
