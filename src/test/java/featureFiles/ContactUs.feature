@@ -1,7 +1,7 @@
 Feature: Contact Form Message Sending
 
   Background:
-    Given The user is on the homepage
+    Given Navigate to E-Junkie homepage
     When The user clicks the Contact Us button
     And The user fills in the contact form with valid details
 
