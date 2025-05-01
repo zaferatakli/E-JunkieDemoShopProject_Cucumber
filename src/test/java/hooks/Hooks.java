@@ -30,15 +30,14 @@ public class Hooks {
                 ExtentTest test = ExtentReportManager.getTest();
 
                 if (test != null) {
-                    test.fail("Test failed. Screenshot below:",
-                            MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+                    test.fail("Test failed. Screenshot below:", MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
                 } else {
                     System.out.println("ExtentTest was null! Screenshot not attached to report.");
                 }
             }
         } catch (Exception e) {
             System.out.println("Screenshot error: " + e.getMessage());
-        } finally {
+        }finally {
             GWD.quitDriver();
         }
     }
