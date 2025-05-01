@@ -80,7 +80,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//a[normalize-space()='E-commerce by E-junkie']")
     public WebElement eCommerceByEJunkieLink;
     @FindBy(xpath = "//a[@href='/']//img")
-    public WebElement EJunkieLogo;
+    public WebElement eJunkieLogo;
     @FindBy(xpath = "//a[@onclick='toggleYoutubeModal(true)']")
     public WebElement howItWorksButton;
     @FindBy(xpath = "//div[@class='video-container']")

@@ -7,11 +7,11 @@ import utilities.ExtentReportManager;
 import utilities.GWD;
 
 @CucumberOptions(
-        features = {"src/test/java/featureFiles"},
+        features = {"src/test/java/featureFiles/AccessToEJunkieHomePage.feature"},
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
-public class ExampleRunner extends AbstractTestNGCucumberTests {
+public class AccessToEJunkieHomePageRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
     @Parameters("browserType")
     public void setUp(String browserType) {

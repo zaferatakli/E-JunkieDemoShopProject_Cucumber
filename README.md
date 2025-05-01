@@ -1,4 +1,4 @@
-# 🧪 E-Junkie Cucumber Automation Project 
+# 🧪 E-Junkie Cucumber Automation Project
 
 ## 📌 Table of Contents
 
@@ -21,7 +21,8 @@
 
 ## 📄 Project Description
 
-This project automates functional UI tests for the [E-Junkie demo shop](https://shopdemo.e-junkie.com/) using **Java**, **Selenium WebDriver**, **Cucumber**, **TestNG**, and the **Page Object Model (POM)**.
+This project automates functional UI tests for the [E-Junkie demo shop](https://shopdemo.e-junkie.com/) using **Java**,
+**Selenium WebDriver**, **Cucumber**, **TestNG**, and the **Page Object Model (POM)**.
 The project adopts BDD principles and parallel test execution for scalable automation.
 
 💪 Key Features:
@@ -40,6 +41,7 @@ The project adopts BDD principles and parallel test execution for scalable autom
 E-JunkieDemoShopProject_Cucumber/
 ├── src/
 │   └── test/
+│       ├──bugReports/                       # Bug reports
 │       ├── java/
 │       │   ├── featureFiles/                # .feature files written in Gherkin
 │       │   ├── hooks/                       # Cucumber Hooks (Before/After)
@@ -62,16 +64,16 @@ E-JunkieDemoShopProject_Cucumber/
 
 ## 🧰 Technologies Used
 
-| Tool / Library                      | Description                         |
-|------------------------------------|-------------------------------------|
-| Java JDK 21                        | Programming Language                |
-| Selenium WebDriver 4.20.0          | Web Automation Library              |
-| Cucumber 7.15.0                    | BDD Testing Framework               |
-| TestNG 7.9.0                       | Test Execution Engine               |
-| ExtentReports 5.1.1 + Adapter 1.10.1 | Spark + PDF reporting integration |
-| Apache POI 5.2.5                   | Excel File Handling                 |
-| Maven                              | Project Build + Dependency Manager  |
-| SLF4J + Log4j                      | Logging                             |
+| Tool / Library                       | Description                        |
+|--------------------------------------|------------------------------------|
+| Java JDK 21                          | Programming Language               |
+| Selenium WebDriver 4.20.0            | Web Automation Library             |
+| Cucumber 7.15.0                      | BDD Testing Framework              |
+| TestNG 7.9.0                         | Test Execution Engine              |
+| ExtentReports 5.1.1 + Adapter 1.10.1 | Spark + PDF reporting integration  |
+| Apache POI 5.2.5                     | Excel File Handling                |
+| Maven                                | Project Build + Dependency Manager |
+| SLF4J + Log4j                        | Logging                            |
 
 ---
 
@@ -107,6 +109,7 @@ All required dependencies are declared in `pom.xml`.
 Ensure Maven updates all packages automatically.
 
 Key dependencies include:
+
 - Selenium
 - Cucumber Java & TestNG
 - ExtentReports (Spark & PDF)
@@ -117,42 +120,43 @@ Key dependencies include:
 
 ## 🧰 User Stories & Test Scenarios
 
-| User Story | Description                                  | Status     |
-|------------|----------------------------------------------|------------|
-| US_301     | Add eBook and apply invalid promo code       | ✅ Passed  |
-| US_302     | Payment attempt with missing info            | ✅ Passed  |
-| US_303     | Payment with fake card                       | ✅ Passed  |
-| US_304     | Successful payment with valid card           | ✅ Passed  |
-| US_305     | eBook download after purchase                | ✅ Passed  |
-| US_306     | Contact form captcha validation              | ✅ Passed  |
-| US_307     | Logo click navigates to homepage             | ✅ Passed  |
-| US_308     | Play and close "How it works" video         | ✅ Passed  |
+| User Story | Description                            | Status   |
+|------------|----------------------------------------|----------|
+| US_301     | Add eBook and apply invalid promo code | ✅ Passed |
+| US_302     | Payment attempt with missing info      | ✅ Passed |
+| US_303     | Payment with fake card                 | ✅ Passed |
+| US_304     | Successful payment with valid card     | ✅ Passed |
+| US_305     | eBook download after purchase          | ✅ Passed |
+| US_306     | Contact form captcha validation        | ✅ Passed |
+| US_307     | Logo click navigates to homepage       | ✅ Passed |
+| US_308     | Play and close "How it works" video    | ✅ Passed |
 
 ---
 
 ## 📊 Test Coverage Table
 
-| Scenario                                 | Priority |
-|------------------------------------------|----------|
-| Add to cart + invalid promo              | Medium   |
-| Missing email or name in payment         | High     |
-| Fake card number                         | High     |
-| Valid payment and success message        | High     |
-| eBook download available                 | High     |
-| Contact form without captcha             | Medium   |
-| Homepage redirection                     | Low      |
-| Video functionality                      | Low      |
+| Scenario                          | Priority |
+|-----------------------------------|----------|
+| Add to cart + invalid promo       | Medium   |
+| Missing email or name in payment  | High     |
+| Fake card number                  | High     |
+| Valid payment and success message | High     |
+| eBook download available          | High     |
+| Contact form without captcha      | Medium   |
+| Homepage redirection              | Low      |
+| Video functionality               | Low      |
 
 ---
 
 ## 📊 Test Reports
 
-| Report Type     | Description                            |
-|------------------|----------------------------------------|
+| Report Type      | Description                             |
+|------------------|-----------------------------------------|
 | **Spark Report** | Rich HTML report with steps/screenshots |
 | **PDF Report**   | Clean summary with scenario results     |
 
 Find reports inside:
+
 ```bash
 /Test Reports/test-output/SparkReport/
 /Test Reports/test-output/PdfReport/
@@ -168,13 +172,13 @@ Currently, all tests are passing. No bugs reported.
 
 ## 👥 Project Team
 
-| Name               | Role                       | User Stories        |
-|--------------------|----------------------------|---------------------|
-| Zafer Ataklı        | Project Lead & QA Engineer | US_301, US_306, US_307 |
-| Rıfat Batır          | QA Engineer                | US_304, US_305        |
-| Azim Korkmaz        | QA Engineer                | US_303              |
-| Nuri Öztürk          | QA Engineer                | US_308              |
-| Yiğit Çam             | QA Engineer                | US_301              |
+| Name         | Role                       | User Stories           |
+|--------------|----------------------------|------------------------|
+| Zafer Ataklı | Project Lead & QA Engineer | US_301, US_306, US_307 |
+| Rıfat Batır  | QA Engineer                | US_304, US_305         |
+| Azim Korkmaz | QA Engineer                | US_303                 |
+| Nuri Öztürk  | QA Engineer                | US_308                 |
+| Tugba Kilic  | QA Engineer                | US_301                 |
 
 ---
 
@@ -183,12 +187,12 @@ Currently, all tests are passing. No bugs reported.
 - 📁 [Main Repository](https://github.com/zaferatakli/E-JunkieDemoShopProject_Cucumber)
 
 **Contributors:**
+
 - [Zafer Ataklı](https://github.com/zaferatakli)
-- [Yiğit Çam](https://github.com/Yigit-Cam)
 - [Rıfat Batır](https://github.com/rftbtr)
 - [Tugba Kilic](https://github.com/TugbaKilic33)
 - [Nuri Öztürk](https://github.com/NuriOzturk)
-
+- [Azim Korkmaz](https://github.com/AzimKorkmaz)
 
 ---
 
