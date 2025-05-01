@@ -5,8 +5,11 @@
     <test name="ChromeSingleTests">
         <parameter name="browserType" value="chrome"/>
         <classes>
+            <class name="runners.PaymentWithCreditCardRunner"/>
+            <class name="runners.PaymentProcessApprovalDownloadRunner"/>
             <class name="runners.ContactUsRunner"/>
             <class name="runners.AccessToEJunkieHomePageRunner"/>
+            <class name="runners.InformationVideoRunner"/>
         </classes>
     </test>
 </suite>
