@@ -5,7 +5,7 @@
     <test name="ChromeSingleTests">
         <parameter name="browserType" value="chrome"/>
         <classes>
-            <class name="runners.ExampleRunner"/>
+            <class name="runners.ContactUsRunner"/>
         </classes>
     </test>
 </suite>

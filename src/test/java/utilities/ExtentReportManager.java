@@ -1,13 +1,22 @@
 package utilities;
 
 import java.time.LocalDateTime;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.service.ExtentService;
 
 public class ExtentReportManager {
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
     private static String browserName = "unknown";
 
     public static void setBrowserName(String name) {
         browserName = name;
+    }
+    public static void setTest(ExtentTest test) {
+        extentTest.set(test);
+    }
+
+    public static ExtentTest getTest() {
+        return extentTest.get();
     }
 
     public static void writeMetadata() {
