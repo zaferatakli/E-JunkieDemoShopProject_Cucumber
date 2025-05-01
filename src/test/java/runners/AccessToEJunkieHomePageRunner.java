@@ -9,7 +9,8 @@ import utilities.GWD;
 @CucumberOptions(
         features = {"src/test/java/featureFiles/AccessToEJunkieHomePage.feature"},
         glue = {"stepDefinitions", "hooks"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+        plugin = {"pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class AccessToEJunkieHomePageRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
@@ -20,7 +21,7 @@ public class AccessToEJunkieHomePageRunner extends AbstractTestNGCucumberTests {
     }
 
     @AfterClass
-    public static void writeExtendReport() {
+    public void writeExtendReport() {
         ExtentReportManager.writeMetadata();
     }
 }
