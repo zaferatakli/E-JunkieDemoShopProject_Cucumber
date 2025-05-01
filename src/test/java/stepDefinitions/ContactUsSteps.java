@@ -20,7 +20,7 @@ public class ContactUsSteps {
     }
 
     @When("The user clicks the Contact Us button")
-    public void theUserClicksTheButton() {
+    public void theUserClicksTheContactUsButton() {
         dc.myClick(dc.contactUsButton);
 
     }

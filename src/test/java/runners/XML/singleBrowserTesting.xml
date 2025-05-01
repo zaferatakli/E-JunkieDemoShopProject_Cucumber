@@ -6,6 +6,7 @@
         <parameter name="browserType" value="chrome"/>
         <classes>
             <class name="runners.ContactUsRunner"/>
+            <class name="runners.AccessToEJunkieHomePageRunner"/>
         </classes>
     </test>
 </suite>

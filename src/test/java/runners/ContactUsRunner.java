@@ -7,7 +7,7 @@ import utilities.ExtentReportManager;
 import utilities.GWD;
 
 @CucumberOptions(
-        features = {"src/test/java/featureFiles"},
+        features = {"src/test/java/featureFiles/ContactUs.feature"},
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
