@@ -46,7 +46,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(id = "label")
     public WebElement humanField;
     @FindBy(xpath = "//img[@alt='Onay işareti']")
-    public WebElement humanFieldCheck;
+    public WebElement captchaFieldCheck;
     @FindBy(xpath = "//div[@id='Stripe-Element']/div/iframe")
     public WebElement cardIframe;
     @FindBy(name = "cardnumber")
@@ -87,4 +87,10 @@ public class DialogContent extends ReusableMethods {
     public WebElement playButton;
     @FindBy(xpath = "//button[@onclick='toggleYoutubeModal(false)']")
     public WebElement closeButton;
+    @FindBy(xpath = "//div[@class='recaptcha-checkbox-border']")
+    public WebElement recaptchaCheckbox; /// for Contact Us page
+    @FindBy(xpath = "//*[@aria-checked='false']")
+    public WebElement recaptchaCheckboxTick; /// for Contact Us page
+    @FindBy(xpath = "//iframe[@title='reCAPTCHA']")
+    public WebElement recaptchaIframe; /// for Contact Us page
 }
