@@ -1,4 +1,4 @@
-Feature:I tried to pay with incomplete information from the Demo Shop
+Feature: I tried to pay with incomplete information from the Demo Shop
 
   Scenario:  Checkout ‘Demo eBook’ purchase test
     Given Navigate to E-Junkie homepage
