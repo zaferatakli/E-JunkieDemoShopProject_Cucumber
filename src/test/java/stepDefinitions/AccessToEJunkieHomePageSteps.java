@@ -25,7 +25,6 @@ public class AccessToEJunkieHomePageSteps {
     @And("The user clicks the E-Junkie logo")
     public void theUserClicksTheEJunkieLogo() {
         dc.myClick(dc.eJunkieLogo);
-
     }
 
     @Then("The user should be redirected to the E-Junkie homepage")

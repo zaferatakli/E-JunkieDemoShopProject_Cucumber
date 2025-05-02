@@ -24,7 +24,6 @@ public class GWD {
             if (browser == null) {
                 browser = "chrome";
             }
-
             switch (browser.toLowerCase()) {
                 case "edge":
                     threadDriver.set(new EdgeDriver());

@@ -25,8 +25,8 @@ public class InformationVideoSteps {
     @And("The user clicks the play button")
     public void theUserClicksThePlayButton() {
         dc.myClick(dc.playButton);
-        MyFunc.sleep(11);// Sleep for 11 seconds to allow the video to play
-        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.closeButton));// Sleep for 11 seconds to allow the video to play
+        MyFunc.sleep(11);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.closeButton));
         Assert.assertTrue(dc.closeButton.isDisplayed(), "Close button is not displayed");
     }
 
