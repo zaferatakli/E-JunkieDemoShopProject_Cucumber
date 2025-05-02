@@ -6,7 +6,6 @@ import org.testng.Assert;
 import pages.DialogContent;
 import utilities.ConfigReader;
 import utilities.GWD;
-import utilities.ReusableMethods;
 
 public class ContactUsSteps {
     DialogContent dc = new DialogContent();
@@ -53,21 +52,18 @@ public class ContactUsSteps {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.recaptchaCheckbox));
         GWD.getWait().until(ExpectedConditions.elementToBeClickable(dc.recaptchaCheckbox));
         dc.myClick(dc.recaptchaCheckbox);
-        ReusableMethods.waitForManualCaptchaSolution(dc.recaptchaCheckboxTick);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.recaptchaCheckboxTick));
         GWD.getDriver().switchTo().defaultContent();
     }
 
     @And("The user clicks the Send Message button")
     public void theUserClicksTheSendMessageButton() {
+        GWD.getWait().until(ExpectedConditions.elementToBeClickable(dc.sendMessageButton));
         dc.myClick(dc.sendMessageButton);
     }
 
     @Then("A Your message has been sent successfully message should be displayed")
     public void aMessageShouldBeDisplayed() {
-        /// When the send message button is pressed after filling out the contact us form on the site,
-        ///the 'Message sent successfully' tool should appear, while the 'Recaptcha didn't match' alert appears on the screen on the site.
-        ///and the test fails. screenshot of this error screenshot was taken.
-        ///and testReports/screenshots/ContactUsPositiveScenarioBugScreenshot.png has been added to this address.
         GWD.getWait().until(ExpectedConditions.alertIsPresent());
         String successMessageText = GWD.getDriver().switchTo().alert().getText();
         Assert.assertEquals(successMessageText, ConfigReader.getProperty("contactUsSuccessMessage"), "Success Message text is not correct");

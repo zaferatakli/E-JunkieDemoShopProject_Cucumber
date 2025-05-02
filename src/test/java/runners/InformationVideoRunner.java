@@ -3,7 +3,6 @@ package runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.*;
-import utilities.ExtentReportManager;
 import utilities.GWD;
 
 @CucumberOptions(
@@ -16,11 +15,5 @@ public class InformationVideoRunner extends AbstractTestNGCucumberTests {
     @Parameters("browserType")
     public void setUp(String browserType) {
         GWD.threadBrowserName.set(browserType);
-        ExtentReportManager.setBrowserName(browserType);
-    }
-
-    @AfterClass
-    public void writeExtendReport() {
-        ExtentReportManager.writeMetadata();
     }
 }

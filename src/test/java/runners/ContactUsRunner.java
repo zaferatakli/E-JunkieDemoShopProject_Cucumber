@@ -1,27 +1,38 @@
 package runners;
 
+import com.aventstack.extentreports.service.ExtentService;
+import io.cucumber.java.Scenario;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.*;
-import utilities.ExtentReportManager;
 import utilities.GWD;
 
-@CucumberOptions(
-        features = {"src/test/java/featureFiles/ContactUs.feature"},
-        glue = {"stepDefinitions", "hooks"},
-        plugin = {"pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+import java.time.LocalDateTime;
+
+@CucumberOptions(features = {"src/test/java/featureFiles/ContactUs.feature"}, glue = {"stepDefinitions", "hooks"}, plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class ContactUsRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
     @Parameters("browserType")
     public void setUp(String browserType) {
         GWD.threadBrowserName.set(browserType);
-        ExtentReportManager.setBrowserName(browserType);
     }
 
     @AfterClass
     public void writeExtendReport() {
-        ExtentReportManager.writeMetadata();
+        ExtentService.getInstance().setSystemInfo("--------------------", "--------------------");
+        ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
+        ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+        ExtentService.getInstance().setSystemInfo("Browser", GWD.threadBrowserName.get());
+        ExtentService.getInstance().setSystemInfo("Execution Date", LocalDateTime.now().toString());
+        ExtentService.getInstance().setSystemInfo("User Name", "Bug Fathers");
+        ExtentService.getInstance().setSystemInfo("Team Name", "Team#4");
+        ExtentService.getInstance().setSystemInfo("Application Name", "E-Junkie Demo Shop");
+        ExtentService.getInstance().setSystemInfo("Test Tag", "Contact Us Test");
+        ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
+        ExtentService.getInstance().setSystemInfo("Department", "QA");
+
     }
 }
