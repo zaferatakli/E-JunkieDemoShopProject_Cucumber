@@ -1,17 +1,16 @@
 package runners;
 
 import com.aventstack.extentreports.service.ExtentService;
-import io.cucumber.java.Scenario;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.*;
 import utilities.GWD;
 
 import java.time.LocalDateTime;
 
-@CucumberOptions(features = {"src/test/java/featureFiles/ContactUs.feature"}, glue = {"stepDefinitions", "hooks"}, plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+@CucumberOptions(features = {"src/test/java/featureFiles/ContactUs.feature"},
+        glue = {"stepDefinitions"},
+        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class ContactUsRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
@@ -33,6 +32,5 @@ public class ContactUsRunner extends AbstractTestNGCucumberTests {
         ExtentService.getInstance().setSystemInfo("Test Tag", "Contact Us Test");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
         ExtentService.getInstance().setSystemInfo("Department", "QA");
-
     }
 }
