@@ -22,7 +22,6 @@ public class ContactUsSteps {
     @When("The user clicks the Contact Us button")
     public void theUserClicksTheContactUsButton() {
         dc.myClick(dc.contactUsButton);
-
     }
 
     @And("The user fills in the contact form with valid details")

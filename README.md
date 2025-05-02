@@ -54,7 +54,7 @@ E-JunkieDemoShopProject_Cucumber/
 │           ├── fonts/                       # Fonts used in reports
 │           ├── extent.properties            # ExtentReports configuration
 │           └── pdf-cucumber-report-config.yaml
-├── test-output/                             # Spark & PDF report output (auto-generated)
+├── testReports/                             # Spark & PDF report output (auto-generated)
 ├── configuration.properties                 # General test configuration
 ├── pom.xml                                  # Maven build configuration
 └── README.md
@@ -127,7 +127,7 @@ Key dependencies include:
 | US_303     | Payment with fake card                 | ✅ Passed |
 | US_304     | Successful payment with valid card     | ✅ Passed |
 | US_305     | eBook download after purchase          | ✅ Passed |
-| US_306     | Contact form captcha validation        | ✅ Passed |
+| US_306     | Contact form captcha validation        | ❌ Fail   |
 | US_307     | Logo click navigates to homepage       | ✅ Passed |
 | US_308     | Play and close "How it works" video    | ✅ Passed |
 
@@ -159,26 +159,28 @@ Find reports inside:
 
 ```bash
 /Test Reports/test-output/SparkReport/
-/Test Reports/test-output/PdfReport/
+
 ```
 
 ---
 
 ## 📅 Bug Reports
 
-Currently, all tests are passing. No bugs reported.
+US_306 - Contact form captcha validation Positive test failed.
+
+![Bug Screenshot](testReports/screenshots/ContactUsPositiveScenarioBugScreenshot.png)
 
 ---
 
 ## 👥 Project Team
 
-| Name         | Role                       | User Stories           |
-|--------------|----------------------------|------------------------|
-| Zafer Ataklı | Project Lead & QA Engineer | US_301, US_306, US_307 |
-| Rıfat Batır  | QA Engineer                | US_304, US_305         |
-| Azim Korkmaz | QA Engineer                | US_303                 |
-| Nuri Öztürk  | QA Engineer                | US_308                 |
-| Tugba Kilic  | QA Engineer                | US_301                 |
+| Name         | Role                       | User Stories   |
+|--------------|----------------------------|----------------|
+| Zafer Ataklı | Project Lead & QA Engineer | US_306, US_307 |
+| Rıfat Batır  | QA Engineer                | US_304, US_305 |
+| Azim Korkmaz | QA Engineer                | US_302         |
+| Nuri Öztürk  | QA Engineer                | US_308         |
+| Tugba Kilic  | QA Engineer                | US_301, US_303 |
 
 ---
 
@@ -198,7 +200,7 @@ Currently, all tests are passing. No bugs reported.
 
 ## 📜 License
 
-This project is intended for **educational and non-commercial purposes** only. All rights reserved by the authors.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 

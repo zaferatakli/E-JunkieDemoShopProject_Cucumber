@@ -7,12 +7,12 @@ import utilities.ExtentReportManager;
 import utilities.GWD;
 
 @CucumberOptions(
-        features = {"src/test/java/featureFiles/PaymentAttemptWithMissingİnformation.feature"},
+        features = {"src/test/java/featureFiles/PaymentAttemptWithMissingInformation.feature"},
         glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
-public class PaymentAttemptWithMissingİnformationRunner extends AbstractTestNGCucumberTests {
+public class PaymentAttemptWithMissingInformationRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
     @Parameters("browserType")
     public void setUp(String browserType) {
