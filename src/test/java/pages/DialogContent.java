@@ -89,7 +89,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement closeButton;
     @FindBy(xpath = "//div[@class='recaptcha-checkbox-border']")
     public WebElement recaptchaCheckbox; /// for Contact Us page
-    @FindBy(xpath = "//*[@aria-checked='false']")
+    @FindBy(xpath = "//*[text()='Doğrulandınız']") //recaptcha-accessible-status //*[@id='recaptcha-accessible-status'][text()='Doğrulandınız']
     public WebElement recaptchaCheckboxTick; /// for Contact Us page
     @FindBy(xpath = "//iframe[@title='reCAPTCHA']")
     public WebElement recaptchaIframe; /// for Contact Us page
