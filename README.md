@@ -41,7 +41,7 @@ The project adopts BDD principles and parallel test execution for scalable autom
 E-JunkieDemoShopProject_Cucumber/
 ├── src/
 │   └── test/
-│       ├──bugReports/                       # Bug reports
+│       │
 │       ├── java/
 │       │   ├── featureFiles/                # .feature files written in Gherkin
 │       │   ├── hooks/                       # Cucumber Hooks (Before/After)
@@ -54,6 +54,7 @@ E-JunkieDemoShopProject_Cucumber/
 │           ├── fonts/                       # Fonts used in reports
 │           ├── extent.properties            # ExtentReports configuration
 │           └── pdf-cucumber-report-config.yaml
+├── testGifs/                                # GIFs used in reports
 ├── testReports/                             # Spark & PDF report output (auto-generated)
 ├── configuration.properties                 # General test configuration
 ├── pom.xml                                  # Maven build configuration
@@ -70,7 +71,7 @@ E-JunkieDemoShopProject_Cucumber/
 | Selenium WebDriver 4.20.0            | Web Automation Library             |
 | Cucumber 7.15.0                      | BDD Testing Framework              |
 | TestNG 7.9.0                         | Test Execution Engine              |
-| ExtentReports 5.1.1 + Adapter 1.10.1 | Spark + PDF reporting integration  |
+| ExtentReports 5.1.1 + Adapter 1.14.0 | Spark + PDF reporting integration  |
 | Apache POI 5.2.5                     | Excel File Handling                |
 | Maven                                | Project Build + Dependency Manager |
 | SLF4J + Log4j                        | Logging                            |
@@ -120,6 +121,85 @@ Key dependencies include:
 
 ## 🧰 User Stories & Test Scenarios
 
+
+### **1️⃣ US_301 - Add eBook to cart & invalid promo code**
+📌 As a customer, I want to add an eBook to the basket and try applying an invalid promo code, so I can check whether the system correctly displays the "Invalid promo code" warning.
+
+✅ Expected: "Invalid promo code" warning message is displayed after clicking “Apply.”
+
+✅ Actual: After adding the eBook to the basket and entering an invalid promo code, the system displayed the warning message "Invalid promo code" upon clicking “Apply.”
+
+<img src="testGifs/US301.gif" alt="US301_EJunkieAddingEbook.gif" width="800" height="500"/>
+
+### **2️⃣ US_302 - Payment attempt with missing information**
+📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
+
+✅ Expected: "Invalid email" and "Invalid billing name" error messages are displayed.
+
+✅ Actual: When the required fields like email and billing name were left empty, the system triggered the form validations and displayed the error messages "Invalid email" and "Invalid billing name."
+
+<img src="testGifs/US302.gif" alt="US302_DebitCardFaultyPayment.gif" width="800" height="500"/>
+
+### **3️⃣ US_303 - Invalid card number payment attempt**
+📌 As a customer, I want to enter a fake card number during payment so I can verify that the system blocks invalid card details.
+
+✅ Expected: "Your card number is invalid" warning appears.
+
+✅ Actual: When a fake card number was entered, the system correctly blocked the payment and displayed the warning message "Your card number is invalid."
+
+<img src="testGifs/US303.gif" alt="US303_FailedPaymentCheck.gif" width="800" height="500"/>
+
+### **4️⃣ US_304 - Successful payment with valid card**
+📌 As a customer, I want to complete the payment with valid card details so I can receive confirmation of a successful purchase.
+
+✅ Expected: "Your order has been confirmed. Thank you!" is displayed.
+
+✅ Actual: The payment was completed successfully with valid card details, and the message "Your order has been confirmed. Thank you!" was displayed.
+
+<img src="testGifs/US304.gif" alt="US304_PaymentCC.gif" width="800" height="500"/>
+
+### **5️⃣ US_305 - Can user download the eBook?**
+📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
+
+✅ Expected: File download starts and matches the purchased content.
+
+✅ Actual: The eBook download started immediately after the successful purchase and matched the purchased content.
+
+<img src="testGifs/US305.gif" alt="US305_PaymentProcessApprovalDownload.gif" width="800" height="500"/>
+
+### **6️⃣ US_306 - Submit contact form**
+📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
+
+✅ Expected: "Recaptcha did not match" error message appears.
+
+✅ Actual: "Recaptcha did not match" error message appeared.
+
+<img src="testGifs/US306.gif" alt="US306_EJunkie_ContactUs.gif" width="800" height="500"/>
+
+### **7️⃣ US_307 - Access main e-junkie page**
+📌 As a customer, I want to navigate from the demo site to the official e-junkie homepage to verify the redirection works correctly.
+
+✅ Expected: Final URL matches e-junkie.com.
+
+✅ Actual: Final URL matched e-junkie.com.
+
+<img src="testGifs/US307.gif" alt="US307_EJunkie_Logo.gif" width="800" height="500"/>
+
+### **8️⃣ US_308 - Access 'How it works' video**
+📌 As a customer, I want to play the 'How it works' video and ensure it starts, plays for 10 seconds, and closes properly.
+
+✅ Expected: Video plays and closes after 10 seconds.
+
+✅ Actual: The video started playing successfully, continued for 10 seconds, and closed as expected without any issues.
+
+<img src="testGifs/US308.gif" alt="US308_EJunkieInformationVideo.gif" width="800" height="500"/>
+
+
+---
+
+
+## 🧰 User Stories & Test Scenarios
+
 | User Story | Description                            | Status   |
 |------------|----------------------------------------|----------|
 | US_301     | Add eBook and apply invalid promo code | ✅ Passed |
@@ -127,7 +207,7 @@ Key dependencies include:
 | US_303     | Payment with fake card                 | ✅ Passed |
 | US_304     | Successful payment with valid card     | ✅ Passed |
 | US_305     | eBook download after purchase          | ✅ Passed |
-| US_306     | Contact form captcha validation        | ❌ Fail   |
+| US_306     | Contact form captcha validation        | ✅ Passed |
 | US_307     | Logo click navigates to homepage       | ✅ Passed |
 | US_308     | Play and close "How it works" video    | ✅ Passed |
 
