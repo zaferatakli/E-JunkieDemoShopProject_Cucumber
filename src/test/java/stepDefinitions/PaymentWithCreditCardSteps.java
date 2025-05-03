@@ -12,14 +12,14 @@ public class PaymentWithCreditCardSteps {
 
     @And("click AddToCart for Demo eBook.")
     public void clickAddToCartForDemoEBook() {
-        dc.demoEBookAddToCart.click();
+        dc.myClick(dc.demoEBookAddToCart);
     }
 
     @And("hit the pay by credit card button.")
     public void hitThePayByCreditCardButton() {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.yourCardIframe));
         GWD.getDriver().switchTo().frame(dc.yourCardIframe);
-        dc.creditCardButton.click();
+        dc.myClick(dc.creditCardButton);
     }
 
     @When("billing details page is displayed, click on the “I am a human” field")
@@ -27,7 +27,7 @@ public class PaymentWithCreditCardSteps {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.billingForm));
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.humanIframe));
         GWD.getDriver().switchTo().frame(dc.humanIframe);
-        dc.humanField.click();
+        dc.myClick(dc.humanField);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.captchaFieldCheck));
     }
 
@@ -36,20 +36,22 @@ public class PaymentWithCreditCardSteps {
         GWD.getDriver().switchTo().defaultContent();
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.yourCardIframe));
         GWD.getDriver().switchTo().frame(dc.yourCardIframe);
-        dc.emailField.sendKeys(ConfigReader.getProperty("email"));
-        dc.confirmEmailField.sendKeys(ConfigReader.getProperty("email"));
-        dc.nameOnCardField.sendKeys(ConfigReader.getProperty("name"));
+        dc.mySendKeys(dc.emailField, ConfigReader.getProperty("email"));
+        dc.mySendKeys(dc.confirmEmailField, ConfigReader.getProperty("email"));
+        dc.mySendKeys(dc.nameOnCardField, ConfigReader.getProperty("name"));
 
         GWD.getDriver().switchTo().frame(dc.cardIframe);
-        dc.cardNumberField.sendKeys(ConfigReader.getProperty("validCreditCardNum"));
-        dc.expDateField.sendKeys(ConfigReader.getProperty("validCardExpDate"));
-        dc.cvcField.sendKeys(ConfigReader.getProperty("validCvc"));
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.cardNumberField));
+        dc.mySendKeys(dc.cardNumberField, ConfigReader.getProperty("validCreditCardNum"));
+        dc.mySendKeys(dc.expDateField, ConfigReader.getProperty("validCardExpDate"));
+        dc.mySendKeys(dc.cvcField, ConfigReader.getProperty("validCvc"));
     }
 
     @And("click the pay button.")
     public void clickThePayButton() {GWD.getDriver().switchTo().defaultContent();
         GWD.getDriver().switchTo().frame(dc.yourCardIframe);
-        dc.payButton.click();
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.payButton));
+        dc.myClick(dc.payButton);
     }
 
     @And("the successful completion of the transaction.")

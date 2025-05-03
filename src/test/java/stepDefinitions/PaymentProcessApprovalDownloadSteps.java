@@ -21,6 +21,6 @@ public class PaymentProcessApprovalDownloadSteps {
     public void downloadTheBookByCheckingThePrice() {
         String eBookPrice = dc.lastEBookPrice.getText().replaceAll("[^0-9.,]", "");
         Assert.assertEquals(eBookPrice, ConfigReader.getProperty("expectedBookPrice"), "The first price and the last price are different.");
-        dc.downloadBtn.click();
+        dc.myClick(dc.downloadBtn);
     }
 }
