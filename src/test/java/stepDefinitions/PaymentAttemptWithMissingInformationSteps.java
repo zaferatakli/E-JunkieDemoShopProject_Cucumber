@@ -11,6 +11,8 @@ public class PaymentAttemptWithMissingInformationSteps {
 
     @Then("The user should see the invalid messages")
     public void verifyInvalidEmailAndInvalidInvoiceNameErrorMessages() {
+        GWD.getWait().until(ExpectedConditions.elementToBeClickable(dc.payButton));
+        dc.myClick(dc.payButton);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.invalidMessage));
         Assert.assertTrue(dc.invalidMessage.isDisplayed(), "Invalid message not displayed");
     }
