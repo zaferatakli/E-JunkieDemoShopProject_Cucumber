@@ -117,7 +117,6 @@ Key dependencies include:
 - ExtentReports (Spark & PDF)
 - SLF4J + Log4j
 - Healenium-web
--
 
 ---
 
