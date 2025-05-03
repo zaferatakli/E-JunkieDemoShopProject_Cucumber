@@ -31,7 +31,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement confirmEmailField;
     @FindBy(css = "button[class='Payment-Button CC']")
     public WebElement creditCardButton;
-    @FindBy(xpath = "//*[@id='SnackBar']/span")
+    @FindBy(xpath = "//div[@id='SnackBar']/span")
     public WebElement invalidMessage;
     @FindBy(xpath = "//button[@class='Pay-Button']")
     public WebElement payButton;

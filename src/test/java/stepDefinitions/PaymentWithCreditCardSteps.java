@@ -19,6 +19,8 @@ public class PaymentWithCreditCardSteps {
     public void hitThePayByCreditCardButton() {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.yourCardIframe));
         GWD.getDriver().switchTo().frame(dc.yourCardIframe);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.creditCardButton));
+        GWD.getWait().until(ExpectedConditions.elementToBeClickable(dc.creditCardButton));
         dc.myClick(dc.creditCardButton);
     }
 
