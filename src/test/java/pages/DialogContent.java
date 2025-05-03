@@ -17,14 +17,10 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//iframe[@class='EJIframeV3 EJOverlayV3']")
     public WebElement yourCardIframe;
-    @FindBy(xpath = "//*[text()='Proceed To Pay']")
-    public WebElement message;
     @FindBy(xpath = "//*[text()='Add Promo Code']")
-    public WebElement promoCode;
+    public WebElement addPromoCodeButton;
     @FindBy(xpath = "//*[@class='Promo-Code-Value']")
     public WebElement promoCodeField;
-    @FindBy(xpath = "//*[text()='Invalid promo code']")
-    public WebElement invalidCode;
     @FindBy(xpath = "//input[@placeholder='Email']")
     public WebElement emailField;
     @FindBy(xpath = "//input[@placeholder='Confirm Email']")
@@ -55,8 +51,6 @@ public class DialogContent extends ReusableMethods {
     public WebElement expDateField;
     @FindBy(name = "cvc")
     public WebElement cvcField;
-    @FindBy(xpath = "//*[@id='SnackBar']/span")
-    public WebElement errorText;
     @FindBy(xpath = "//p[@class='confirme_text']")
     public WebElement confirmText;
     @FindBy(xpath = "(//*[@class='price'])[2]")
