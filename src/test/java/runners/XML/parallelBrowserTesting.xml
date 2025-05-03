@@ -5,13 +5,13 @@
     <test name="ChromeParallelTests">
         <parameter name="browserType" value="chrome"/>
         <classes>
-            <class name="runners.ContactUsRunner"/>
+            <class name="runners.AllTestRunner"/>
         </classes>
     </test>
     <test name="EdgeParallelTests">
         <parameter name="browserType" value="edge"/>
         <classes>
-            <class name="runners.ContactUsRunner"/>
+            <class name="runners.AllTestRunner"/>
         </classes>
     </test>
 </suite>
