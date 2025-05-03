@@ -31,7 +31,6 @@ The project adopts BDD principles and parallel test execution for scalable autom
 - **TestNG + XML execution** with browser parameterization
 - **Thread-safe WebDriver management** with `ThreadLocal`
 - **ExtentReports Integration** for both HTML and PDF reporting
-- **Apache POI** for exporting test results to Excel
 
 ---
 
