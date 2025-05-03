@@ -15,7 +15,7 @@ public class Hooks {
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName().replaceAll("[^a-zA-Z0-9\\.\\-]", "_"));
         }
-        GWD.quitDriver();
+        GWD.tearDown();
         System.out.println("hooks after class");
     }
 }

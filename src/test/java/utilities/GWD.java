@@ -36,7 +36,9 @@ public class GWD {
                     break;
                 default:
                     threadDriver.set(new ChromeDriver());
+                    break;
             }
+
             threadDriver.get().manage().window().maximize();
             threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigReader.getIntProperty("pageLoadTimeout")));
         }
@@ -47,19 +49,18 @@ public class GWD {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicitWait")));
     }
 
-    public static void quitDriver() {
+    public static void tearDown() {
         if (threadDriver.get() != null) {
             System.out.println("Quitting driver: " + threadDriver.get().toString());
             try {
-                Thread.sleep(500);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            } finally {
+                throw new RuntimeException(e);
+            }
+            if (threadDriver.get() != null) {
                 threadDriver.get().quit();
                 threadDriver.remove();
             }
-        } else {
-            System.out.println("Driver is already null, no need to quit.");
         }
     }
 }
